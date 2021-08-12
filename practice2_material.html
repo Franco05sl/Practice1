@@ -1,0 +1,113 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <title>Cuestionario</title>
+        <style>
+            .clasePrueba{
+                margin-top: 20px;
+                color: rgb(17, 138, 138);
+            }
+            body{
+                padding-top: 20px;
+                padding-left: 20px;
+                background-color: rgba(66, 62, 62, 0.705);
+                color: white;
+            }
+            .txtPregunta{
+                margin-top:30px;
+                margin-left: 2px;
+                color:chartreuse;
+                font-style: italic;
+            }
+            #btnValidar{
+                margin-top:20px;
+                margin-left: 180px;
+            }
+            #nombre {
+                width:300px;
+            }
+        </style>
+        <script>
+            function validar(){
+                
+                nombre = document.getElementById("nombre").value;
+                
+                var respuesta1 = document.querySelector('input[name="pregunta1"]:checked').value;
+                var respuesta2 = document.querySelector('input[name="pregunta2"]:checked').value;
+
+                if (respuesta1 == 2 && respuesta2==3 ) {
+                    alert("Correcto, " + nombre);
+                } else {
+                    alert("Incorrecto")
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form action="#">
+            <div id="texto">
+                <H5>FORMULARIO DE PRUEBA</H5>
+            </div>
+            <div id="entrada">
+                <input id="nombre" placeholder="Ingrese su nombre"/>   
+            </div>
+            <div>
+                <div id="mitexto" class="txtPregunta">Que es un microondas? </div>
+                <div id="midiv1" name="nombre">
+                    <label>
+                        <input name="pregunta1" type="radio" value="1"  />
+                        <span>animal</span>
+                    </label>
+                    <label>
+                        <input name="pregunta1" type="radio" value="2"  />
+                        <span>electrodomestico</span>
+                    </label>
+                    <label>
+                        <input name="pregunta1" type="radio" value="3"  />
+                        <span>vegetal</span>
+                    </label>
+                </div>
+
+                <div id="mitexto2" class="txtPregunta">¿Que es un organo? </div>
+                <div id="midiv2" name="nombre">
+                    <label>
+                        <input type="radio" name="pregunta2" value="1"/>
+                        <span>perro</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta2" value="2"/>
+                        <span>goma</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="pregunta2" value="3"/>
+                        <span>corazon</span>
+                    </label>
+                </div>
+
+                <button id="btnValidar" data-target="modal1" class="btn waves-effect waves-light modal-trigger" name="action" >Resultado
+                    <i class="material-icons left">check</i>
+                </button>
+                        
+            </div>
+        </form>
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+              <h4>Modal Header</h4>
+              <p>A bunch of text</p>
+            </div>
+            <div class="modal-footer">
+              <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+            </div>
+          </div>
+    </body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.modal');
+            var instances = M.Modal.init(elems, options);
+        });
+
+    </script>
+
+</html>

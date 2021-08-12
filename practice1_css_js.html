@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <title>Cuestionario</title>
+        <style>
+            .clasePrueba{
+                margin-top: 20px;
+                color: rgb(17, 138, 138);
+            }
+            body{
+                padding-top: 20px;
+                padding-left: 20px;
+                background-color: black;
+                color: white;
+            }
+            .txtPregunta{
+                margin-top:30px;
+                margin-left: 2px;
+                color:chartreuse;
+                font-style: italic;
+            }
+            #btnValidar{
+                margin-top:20px;
+                margin-left: 180px;
+            }
+        </style>
+        <script>
+            var variable = "Campera";
+
+            function hizoClick() {
+                /*var ciudad = document.getElementById("ciudad").value;
+                
+                descripcionCiudad = "";
+                if (ciudad == "SL") {
+                    descripcionCiudad = "San Luis";
+                } else if (ciudad == "COR"){
+                    descripcionCiudad = "Cordoba";
+                } else {
+                    descripcionCiudad = "Ciudad No Reconocida";
+                }
+                //alert(descripcionCiudad)
+                */
+                var eleccion = document.getElementById("ciudad").value;
+                vector = [65, 33, 29];
+                alert(vector[eleccion]);
+            }
+            function validar(){
+                nombre = document.getElementById("nombre").value;
+
+                var respuesta1 = document.querySelector('input[name="pregunta1"]:checked').value;
+                var respuesta2 = document.querySelector('input[name="pregunta2"]:checked').value;
+                if (respuesta1 == 2 && respuesta2==3 ) {
+                    alert("Correcto\n " + nombre);
+                } else {
+                    alert("Incorrecto")
+                }
+                
+            }
+        </script>
+    </head>
+    <body>
+        <div id="texto">
+            Ingrese su nombre
+        </div>
+        <div id="entrada">
+            <input id="nombre" />   
+        </div>
+        <div>
+            <div id="mitexto" class="txtPregunta">Que es un microondas? </div>
+            <div id="midiv1" name="nombre">
+                <input type="radio" name="pregunta1" value="1"/>animal
+                <input type="radio" name="pregunta1" value="2"/>electrodomestico
+                <input type="radio" name="pregunta1" value="3"/>vegetal
+            </div>
+
+            <div id="mitexto2" class="txtPregunta">¿Que es un organo? </div>
+            <div id="midiv2" name="nombre">
+                <input type="radio" name="pregunta2" value="1"/>perro
+                <input type="radio" name="pregunta2" value="2"/>goma
+                <input type="radio" name="pregunta2" value="3"/>corazón
+            </div>
+            <button id="btnValidar" onClick="validar()">Resultado</button>
+                       
+        </div>
+    </body>
+</html>
